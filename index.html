@@ -17,6 +17,38 @@ font-family:'Heebo',sans-serif;
 margin:0;
 background:#f3f3f3;
 color:#333;
+overflow-x:hidden;
+}
+
+/* BACKGROUND WORDS */
+
+.words-bg{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:-1;
+overflow:hidden;
+}
+
+.word{
+position:absolute;
+font-size:22px;
+font-weight:700;
+color:rgba(0,0,0,0.05);
+white-space:nowrap;
+animation:moveWord linear infinite;
+}
+
+@keyframes moveWord{
+from{
+transform:translateX(-120%);
+}
+to{
+transform:translateX(120%);
+}
 }
 
 /* HEADER */
@@ -283,6 +315,10 @@ font-size:22px;
 font-size:44px;
 }
 
+.word{
+font-size:16px;
+}
+
 }
 
 </style>
@@ -292,6 +328,8 @@ font-size:44px;
 
 <body>
 
+<!-- BACKGROUND WORDS -->
+<div class="words-bg" id="words"></div>
 
 <div class="hero">
 
@@ -443,25 +481,48 @@ style="border:0">
 
 <script>
 
-const observer = new IntersectionObserver(entries => {
-
-entries.forEach(entry => {
-
+/* scroll animation */
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
 if(entry.isIntersecting){
 entry.target.classList.add("show")
 }
-
+})
 })
 
-})
+document.querySelectorAll(".hidden").forEach(el=>observer.observe(el))
 
-document.querySelectorAll(".hidden").forEach(el => observer.observe(el))
+
+/* moving words background */
+
+const words = [
+"English","אנגלית","Words","מילים","Speak","דיבור",
+"Learn","למידה","Fun","כיף","Kids","ילדים",
+"Play","משחק","Confidence","ביטחון","Practice","תרגול"
+]
+
+const container = document.getElementById("words")
+
+for(let i=0;i<35;i++){
+
+const word = document.createElement("span")
+
+word.className="word"
+
+word.innerText=words[Math.floor(Math.random()*words.length)]
+
+word.style.top=Math.random()*100+"%"
+word.style.left="-20%"
+
+word.style.animationDuration=(20+Math.random()*20)+"s"
+word.style.fontSize=(16+Math.random()*18)+"px"
+
+container.appendChild(word)
+
+}
 
 </script>
 
 
 </body>
 </html>
-
-
-
