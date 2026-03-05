@@ -24,7 +24,7 @@ color:#333;
 .hero{
 background:#5b0b75;
 color:white;
-padding:50px 20px;
+padding:60px 20px;
 text-align:center;
 position:relative;
 }
@@ -40,7 +40,7 @@ width:90px;
 position:absolute;
 left:30px;
 top:20px;
-width: 100px;px;
+width:100px;
 }
 
 .hero h1{
@@ -182,7 +182,7 @@ border-radius:12px;
 overflow:hidden;
 }
 
-/* CONTACT BIG */
+/* CONTACT */
 
 .contact{
 background:#ff8a00;
@@ -247,6 +247,10 @@ transform:translateY(0);
 
 @media(max-width:800px){
 
+.hero{
+padding-top:140px;
+}
+
 .program{
 flex-direction:column;
 }
@@ -255,20 +259,28 @@ flex-direction:column;
 flex-direction:column;
 }
 
-.flags{
-width:100px;
-}
-
 .logo{
-width:70px;
+width:60px;
+top:15px;
+right:15px;
 }
 
-.contact-title{
-font-size:40px;
+.flags{
+width:80px;
+top:15px;
+left:15px;
+}
+
+.hero h1{
+font-size:32px;
+}
+
+.hero h2{
+font-size:22px;
 }
 
 .contact-phone{
-font-size:48px;
+font-size:44px;
 }
 
 }
@@ -329,11 +341,8 @@ font-size:48px;
 <div class="features">
 
 <div class="feature">🎯 למידה דרך משחק</div>
-
 <div class="feature">⚽ פעילות גופנית</div>
-
 <div class="feature">🇬🇧 ביטחון באנגלית</div>
-
 <div class="feature">👨‍👩‍👧 קבוצות קטנות</div>
 
 </div>
@@ -373,11 +382,8 @@ font-size:48px;
 <form>
 
 <input type="text" placeholder="שם ההורה">
-
 <input type="text" placeholder="שם הילד">
-
 <input type="tel" placeholder="טלפון">
-
 <input type="email" placeholder="אימייל">
 
 <button>שלח בקשה לשיעור ניסיון</button>
@@ -456,5 +462,3 @@ document.querySelectorAll(".hidden").forEach(el => observer.observe(el))
 
 </body>
 </html>
-
-
