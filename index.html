@@ -37,19 +37,19 @@ overflow:hidden;
 
 .word{
 position:absolute;
-font-size:22px;
 font-weight:700;
-color:rgba(0,0,0,0.08);
+color:rgba(0,0,0,0.07);
 white-space:nowrap;
 animation:moveWord linear infinite;
+will-change: transform;
 }
 
 @keyframes moveWord{
 0%{
-transform:translateX(-150vw);
+transform:translate3d(-120vw,0,0);
 }
 100%{
-transform:translateX(150vw);
+transform:translate3d(120vw,0,0);
 }
 }
 
@@ -460,7 +460,22 @@ style="border:0">
 </div>
 
 </div>
+<br>
 
+<a href="https://waze.com/ul?q=גן בעברית ראשון לציון&navigate=yes" 
+target="_blank"
+style="
+display:inline-block;
+background:#33c469;
+color:white;
+padding:14px 22px;
+border-radius:8px;
+font-size:18px;
+text-decoration:none;
+font-weight:bold;
+">
+🧭 ניווט לגן בעברית ב-Waze
+</a>
 </section>
 
 
@@ -477,8 +492,9 @@ style="border:0">
 </section>
 
 
-<a class="whatsapp" href="https://wa.me/972526988944">
-הרשמה בוואטסאפ
+<a class="whatsapp" 
+href="https://wa.me/972526988944?text=שלום רום! ראיתי את האתר ואני רוצה לקבוע שיעור ניסיון לילד שלי">
+📲 הרשמה לשיעור ניסיון
 </a>
 
 
@@ -554,5 +570,6 @@ window.open(whatsappURL, "_blank")
 
 </body>
 </html>
+
 
 
