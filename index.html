@@ -420,16 +420,16 @@ font-size:16px;
 
 <div class="form-section">
 
-<form>
+    <form id="trialForm">
 
-<input type="text" placeholder="שם ההורה">
-<input type="text" placeholder="שם הילד">
-<input type="tel" placeholder="טלפון">
-<input type="email" placeholder="אימייל">
-
-<button>שלח בקשה לשיעור ניסיון</button>
-
-</form>
+        <input id="parent" type="text" placeholder="שם ההורה" required>
+        <input id="child" type="text" placeholder="שם הילד" required>
+        <input id="phone" type="tel" placeholder="טלפון" required>
+        <input id="email" type="email" placeholder="אימייל">
+        
+        <button type="submit">שלח בקשה לשיעור ניסיון</button>
+        
+        </form>
 
 </div>
 
@@ -523,11 +523,35 @@ word.style.fontSize=(16+Math.random()*18)+"px"
 container.appendChild(word)
 
 }
+/* WHATSAPP FORM */
 
+const form = document.getElementById("trialForm")
+
+form.addEventListener("submit", function(e){
+
+e.preventDefault()
+
+const parent = document.getElementById("parent").value
+const child = document.getElementById("child").value
+const phone = document.getElementById("phone").value
+const email = document.getElementById("email").value
+
+const message =
+"שלום רום! אני רוצה להירשם לשיעור ניסיון.%0A%0A" +
+"שם ההורה: " + parent + "%0A" +
+"שם הילד: " + child + "%0A" +
+"טלפון: " + phone + "%0A" +
+"אימייל: " + email
+
+const whatsappURL =
+"https://wa.me/972526988944?text=" + message
+
+window.open(whatsappURL, "_blank")
+
+})
 </script>
 
 
 </body>
 </html>
-
 
